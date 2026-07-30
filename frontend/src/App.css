@@ -1,0 +1,227 @@
+.app-shell {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 32px 16px 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.app-header h1 {
+  font-size: 1.5rem;
+  margin: 0 0 4px;
+}
+
+.muted {
+  color: #8a8f98;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.small {
+  font-size: 0.8rem;
+}
+
+.card {
+  background: #1a1d24;
+  border: 1px solid #2a2e37;
+  border-radius: 14px;
+  padding: 20px;
+}
+
+.alert {
+  background: #3a2412;
+  border: 1px solid #7a4a17;
+  color: #ffcf8b;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+}
+
+/* Wallet bar */
+.wallet-connected-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-family: monospace;
+}
+
+.badge-success {
+  background: #123a24;
+  color: #4ade80;
+}
+
+/* Poll card */
+.poll-question {
+  margin: 0 0 4px;
+  font-size: 1.2rem;
+}
+
+.options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.option-row {
+  position: relative;
+  background: #12141a;
+  border: 1px solid #2a2e37;
+  border-radius: 10px;
+  padding: 12px 14px;
+  cursor: pointer;
+  overflow: hidden;
+  text-align: left;
+  color: #f2f3f5;
+  font-size: 0.95rem;
+}
+
+.option-row:hover:not(.option-disabled) {
+  border-color: #6366f1;
+}
+
+.option-selected {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 1px #6366f1;
+}
+
+.option-disabled {
+  cursor: default;
+}
+
+.option-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: rgba(99, 102, 241, 0.18);
+  transition: width 0.4s ease;
+  z-index: 0;
+}
+
+.option-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.option-stats {
+  color: #8a8f98;
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Buttons */
+.btn {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 18px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: #6366f1;
+  color: white;
+  width: 100%;
+}
+
+.btn-secondary {
+  background: #2a2e37;
+  color: #f2f3f5;
+}
+
+.btn-link {
+  background: none;
+  color: #7dd3fc;
+  padding: 0;
+  text-decoration: underline;
+  display: inline-block;
+  margin-top: 6px;
+}
+
+/* Tx banner */
+.tx-banner {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tx-success {
+  border-color: #1f5c3a;
+}
+
+.tx-error {
+  border-color: #7a2323;
+}
+
+.tx-banner-text {
+  font-weight: 700;
+  margin: 0;
+}
+
+.tx-banner-title {
+  margin: 4px 0 0;
+  font-weight: 600;
+}
+
+.tx-banner-desc {
+  margin: 0;
+  color: #c7ccd6;
+  font-size: 0.9rem;
+}
+
+.tx-hash code {
+  word-break: break-all;
+  font-size: 0.78rem;
+}
+
+/* Activity feed */
+.activity-card h3 {
+  margin: 0 0 10px;
+}
+
+.activity-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.85rem;
+}
+
+.activity-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #4ade80;
+  flex-shrink: 0;
+}
+
+.app-footer {
+  text-align: center;
+  margin-top: 12px;
+}
