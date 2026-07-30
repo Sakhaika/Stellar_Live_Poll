@@ -9,7 +9,7 @@ fn test_full_poll_flow() {
     let env = Env::default();
     env.mock_all_auths();
 
-    let contract_id = env.register_contract(None, PollContract);
+    let contract_id = env.register(PollContract, ());
     let client = PollContractClient::new(&env, &contract_id);
 
     let admin = Address::generate(&env);
@@ -41,7 +41,7 @@ fn test_double_vote_rejected() {
     let env = Env::default();
     env.mock_all_auths();
 
-    let contract_id = env.register_contract(None, PollContract);
+    let contract_id = env.register(PollContract, ());
     let client = PollContractClient::new(&env, &contract_id);
 
     let admin = Address::generate(&env);
