@@ -2,6 +2,8 @@
 
 Live Poll dApp di **Stellar Testnet** dengan smart contract Soroban. Multi-wallet (Freighter, xBull, Albedo, Lobstr, Hana), vote on-chain, dan hasil yang sync real-time lewat contract events.
 
+> 🌐 **Live Demo:** _https://stellar-poll-sakha.vercel.app_
+
 ## Project Description
 
 Aplikasi "one-question poll" — user connect salah satu dari beberapa wallet yang didukung, pilih opsi, lalu submit vote yang tercatat di smart contract Soroban di testnet. Hasil poll (jumlah vote per opsi) di-render sebagai progress bar, dan ter-update otomatis (near real-time) begitu ada vote baru masuk — baik dari diri sendiri maupun user lain — lewat polling `get_results()` + contract events.
@@ -14,7 +16,7 @@ Aplikasi "one-question poll" — user connect salah satu dari beberapa wallet ya
 | 3+ error types handled        | `WALLET_NOT_FOUND`, `USER_REJECTED`, `INSUFFICIENT_BALANCE`, `ALREADY_VOTED`, `NETWORK_ERROR` (lihat `src/lib/errors.js`)     |
 | Contract deployed on testnet  | Contract Soroban `poll-contract` (lihat `contracts/poll/`)                                                                    |
 | Contract called from frontend | `vote()` (write, perlu signature) & `get_results()`/`get_question()`/`get_options()`/`has_voted()` (read-only via simulation) |
-| Transaction status visible    | Banner status: `simulating → awaiting-signature → submitting → pending → success/error`                                       |
+| Transaction status visible    | Banner status: `simulating → awaiting-signature → submitting → pending → success/error`                                      |
 | Event listening & sync        | Poll `server.getEvents()` tiap 6 detik untuk event `vote`, update UI + activity feed                                          |
 
 ## Tech Stack
@@ -120,7 +122,7 @@ Buka `http://localhost:5173`.
 ## Error Handling (detail)
 
 | Kategori               | Trigger                                      | Pesan ke User             |
-| ---------------------- | -------------------------------------------- | ------------------------- |
+| ----------------------- | -------------------------------------------- | -------------------------- |
 | `WALLET_NOT_FOUND`     | Extension wallet tidak terdeteksi            | Arahan install wallet     |
 | `USER_REJECTED`        | User menolak popup approve/sign              | "Transaksi dibatalkan"    |
 | `INSUFFICIENT_BALANCE` | Saldo XLM kurang untuk fee                   | Arahan fund via Friendbot |
@@ -130,24 +132,22 @@ Buka `http://localhost:5173`.
 ## Deployed Contract
 
 - **Contract ID:** `CC5ZLOTNRAGTNQBMDDQYU2PND2PX2OPUUREUVC2H2WSDEMXTPNDC7QSU`
-- **Explorer:** https://stellar.expert/explorer/testnet/contract/CC5ZLOTNRAGTNQBMDDQYU2PND2PX2OPUUREUVC2H2WSDEMXTPNDC7QSU
+- **Explorer:** <https://stellar.expert/explorer/testnet/contract/CC5ZLOTNRAGTNQBMDDQYU2PND2PX2OPUUREUVC2H2WSDEMXTPNDC7QSU>
 - **Sample vote tx hash:** `42185146b255acc10978e9707d77a0f439030b6d598822d25188802ea1d83359`
-- **Sample tx explorer link:** https://stellar.expert/explorer/testnet/tx/42185146b255acc10978e9707d77a0f439030b6d598822d25188802ea1d83359
+- **Sample tx explorer link:** <https://stellar.expert/explorer/testnet/tx/42185146b255acc10978e9707d77a0f439030b6d598822d25188802ea1d83359>
 
 ## Screenshots
 
-> Tambahkan sebelum submit:
-
-| State                                             | File                             |
-| ------------------------------------------------- | -------------------------------- |
-| Wallet options tersedia (modal StellarWalletsKit) | `screenshots/wallet-options.png` |
-| Poll terhubung + balance/opsi tampil              | `screenshots/poll-connected.png` |
-| Vote berhasil (tx status success + hash)          | `screenshots/vote-success.png`   |
-| Live results ter-update (activity feed)           | `screenshots/live-results.png`   |
+| State                                              | Preview                                                     |
+| --------------------------------------------------- | ------------------------------------------------------------ |
+| Wallet options tersedia (modal StellarWalletsKit)   | ![wallet options](screenshots/wallet-options.png)            |
+| Poll terhubung + balance/opsi tampil                | ![poll connected](screenshots/poll-connected.png)            |
+| Vote berhasil (tx status success + hash)            | ![vote success](screenshots/vote-success.png)                |
+| Live results ter-update (activity feed)             | ![live results](screenshots/live-results.png)                |
 
 ## Live Demo
 
-_(opsional)_ Deploy `frontend/` ke Vercel/Netlify:
+Frontend di-deploy ke Vercel/Netlify:
 
 ```bash
 cd frontend
@@ -155,7 +155,9 @@ npm run build
 # upload dist/, atau connect repo langsung dan set root directory = frontend
 ```
 
-Jangan lupa set environment variable `VITE_CONTRACT_ID` di dashboard hosting.
+Environment variable yang wajib di-set di dashboard hosting: `VITE_CONTRACT_ID`, `VITE_SOROBAN_RPC_URL`.
+
+🔗 **URL Live Demo:** _https://stellar-poll-sakha.vercel.app_
 
 ## Network Info
 
