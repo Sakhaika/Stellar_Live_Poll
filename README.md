@@ -1,4 +1,4 @@
-# 🗳️ Stellar Live Poll — Yellow Belt Submission
+# 🗳️ Stellar Live Poll - Yellow Belt Submission
 
 Live Poll dApp di **Stellar Testnet** dengan smart contract Soroban. Multi-wallet (Freighter, xBull, Albedo, Lobstr, Hana), vote on-chain, dan hasil yang sync real-time lewat contract events.
 
