@@ -6,7 +6,7 @@ Live Poll dApp di **Stellar Testnet** dengan smart contract Soroban. Multi-walle
 
 ## Project Description
 
-Aplikasi "one-question poll" user connect salah satu dari beberapa wallet yang didukung, pilih opsi, lalu submit vote yang tercatat di smart contract Soroban di testnet. Hasil poll (jumlah vote per opsi) di-render sebagai progress bar, dan ter-update otomatis (near real-time) begitu ada vote baru masuk — baik dari diri sendiri maupun user lain — lewat polling `get_results()` + contract events.
+Aplikasi "one-question poll" user connect salah satu dari beberapa wallet yang didukung, pilih opsi, lalu submit vote yang tercatat di smart contract Soroban di testnet. Hasil poll (jumlah vote per opsi) di-render sebagai progress bar, dan ter-update otomatis (near real-time) begitu ada vote baru masuk — baik dari diri sendiri maupun user lain lewat polling `get_results()` + contract events.
 
 ### Fitur yang memenuhi requirement Level 2
 
